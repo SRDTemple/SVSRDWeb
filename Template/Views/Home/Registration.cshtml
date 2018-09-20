@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="page_breadcrumbs ds background_cover section_padding_top_65 section_padding_bottom_65">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2>Contacts</h2>
+                <ol class="breadcrumb greylinks">
+                    <li>
+                        <a href="./">
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">Registration</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ls columns_padding_25 section_padding_top_100 section_padding_bottom_100">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 to_animate" data-animation="scaleAppear">
+                <h3>Registration Form</h3>
+                @using (Html.BeginForm("Registration", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "Registration-form row columns_padding_10" }))
+                {
+                    <div class="col-sm-6 input-group">
+                        <span class="form-group bottommargin_0 input-group-addon">
+                            <i class="fa fa-user"><span class="required">&nbsp;*</span></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Full Name">
+                    </div>
+
+                    <div class="col-sm-6 input-group">
+                        <span class="form-group bottommargin_0 input-group-addon">
+                            <i class="fa fa-envelope"><span class="required">&nbsp;*</span></i>
+                        </span><input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="Email Address*"> </div>
+                    <div class="col-sm-6 input-group">
+                        <span class="form-group bottommargin_0 input-group-addon">
+                            <i class="fa fa-mobile-phone"><span class="required">&nbsp;*</span></i>
+                        </span> <input type="text" size="30" value="" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+                    </div>
+                    
+
+                    <div class="col-sm-12">
+
+                        <div class="contact-form-submit topmargin_20"> <button type="submit" id="register_form_submit" name="register_submit" class="theme_button color2 min_width_button margin_0">Register</button> </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <input class="input-field" type="password" placeholder="Password" name="psw">
+    </div>*@
+
+

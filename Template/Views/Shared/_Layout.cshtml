@@ -1,0 +1,416 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - Sri Vaikuntapuramu Temple- Sanga Reddy</title>
+
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <![endif]-->
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/skel.min.js"></script>
+    <script src="~/Content/js/skel-layers.min.js"></script>
+    <script src="~/Content/js/init.js"></script>
+
+    <!--Paypal-->
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <script>
+        paypal.Button.render({
+
+            env: 'production', // Optional: specify 'sandbox' environment
+
+            client: {
+                sandbox: 'AS3qytYEhfMegXGTrKOPn5k5_sCNys7Kfta37CLm6KJAi4i5gY7b-dY28yiFQUG0zBXZkUKCtizcmbbM',
+                production: 'AdFtIpeMtipQ_hTt7ZeuCKIja6cR-H2dfd1x8p-d2-Z6WCiVlZfGe7-khC9GSSwIzXZvKu_Pr7KT20p9'
+            },
+
+            payment: function () {
+
+                var env = this.props.env;
+                var client = this.props.client;
+
+                return paypal.rest.payment.create(env, client, {
+                    transactions: [
+                        {
+                            amount: { total: '1.00', currency: 'USD' }
+                        }
+                    ]
+                });
+            },
+
+            commit: true, // Optional: show a 'Pay Now' button in the checkout flow
+
+            onAuthorize: function (data, actions) {
+
+                // Optional: display a confirmation page here
+
+                return actions.payment.execute().then(function () {
+                    // Show a success page to the buyer
+                });
+            }
+
+        }, '#paypal-button');
+    </script>
+    <link rel="icon" href="icon.png" type="image/gif" sizes="16x16">
+    <noscript>
+        <link href="css/skel.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/style-xlarge.css" rel="stylesheet" />
+    </noscript>
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/animations.css" rel="stylesheet" />
+    <link href="~/Content/css/fonts.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="~/Content/css/shop.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <!--[if lt IE 9]>
+         <script src="js/vendor/html5shiv.min.js"></script>
+         <script src="js/vendor/respond.min.js"></script>
+         <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <![endif]-->
+
+    <script src="~/Content/js/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    <!--[if lt IE 9]>
+             <div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
+         <![endif]-->
+    <div class="preloader">
+        <div class="preloader_image"></div>
+    </div>
+    <!-- search modal -->
+    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+                <i class="rt-icon2-cross2"></i>
+            </span>
+        </button>
+        <div class="widget widget_search">
+            <form method="get" class="searchform search-form form-inline" action="./">
+                <div class="form-group bottommargin_0"> <input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input"> </div> <button type="submit" class="theme_button no_bg_button">Search</button>
+            </form>
+        </div>
+    </div>
+    <!-- Unyson messages modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+        <div class="fw-messages-wrap ls with_padding">
+            <!-- Uncomment this UL with LI to show messages in modal popup to your user: -->
+            <!--
+            <ul class="list-unstyled">
+                <li>Message To User</li>
+            </ul>
+            -->
+        </div>
+    </div>
+    <!-- eof .modal -->
+  
+            <!-- template sections -->
+            <!-- Header -->
+            <section class="page_topline ds table_section table_section_lg section_padding_top_15 section_padding_bottom_15 columns_margin_0">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 text-center text-lg-left hidden-xs">
+                            <div class="inline-content big-spacing">
+                                <div class="page_social">
+                                    <a class="fa fa-facebook" href="#" title="Facebook"></a>&nbsp;&nbsp;&nbsp; <a class="fa fa-twitter" href="#" title="Twitter"></a>&nbsp;&nbsp;&nbsp;
+                                    <a class="fa fa-google" href="#" title="Google Plus"></a>&nbsp;&nbsp;&nbsp;
+                                    <a class="fa fa-linkedin" href="#" title="Linkedin"></a> &nbsp;
+                                    <a class="fa fa-youtube" href="#" title="Youtube"></a>
+                                </div> <span class="xs-block">
+                                    <i class="fa fa-clock-o highlight3 rightpadding_5" aria-hidden="true"></i>
+                                    Sun-Fri: 06:00-20:00; Sat: 05:00-20:30
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-right">
+                            <div id="topline-animation-wrap" style="height: 31px;">
+                                <div id="topline-hide" class="inline-content big-spacing">
+                                    <span class="hidden-xs">
+                                        <i class="fa fa-map-marker highlight3 rightpadding_5" aria-hidden="true"></i>
+                                        Sri Vaikuntapuramu, Sangareddy - 502201
+                                    </span> <span class="greylinks hidden-xs">
+                                        <i class="fa fa-pencil highlight3 rightpadding_5" aria-hidden="true"></i>
+                                        <a href="mailto:svtemplesrd@gmail.com">svtemplesrd@gmail.com</a>
+                                    </span>
+                                    <div class="xs-block">
+                                        <ul class="inline-list menu greylinks">
+                                            <li>
+                                                <a href="@Url.Action("Registration","Home")">
+                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <!--<li> <a href="#0">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    </a> </li>-->
+                                            <li class="dropdown">
+                                                <a id="search-show" href="./">
+                                                    <i class="fa fa-search"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="topline-show" class="widget widget_search">
+                                    <form method="get" class="searchform inline-form" action="./">
+                                        <div class="form-group-wrap">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="topline-widget-search">Search for:</label> <input id="topline-widget-search" type="text" value="" name="search" class="form-control" placeholder="Enter Keyword..."> <a href="./" id="search-close">
+                                                    <i class="fa fa-close"></i>
+                                                </a>
+                                            </div> <button type="submit" class="theme_button no_bg_button color1">ok</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <header class="page_header header_white toggler_xs_right columns_margin_0">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 display_table">
+                            <div class="header_left_logo display_table_cell">
+                                <a href="Home/index" class="logo logo_with_text">
+                                    <img src="images/logo.png" alt="">
+                                    <span class="logo_text">
+                                        Sri Vaikuntapuramu
+                                        <small class="highlight4">Virat venkateswara swamy Divya kshetram - Sangareddy</small>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="header_mainmenu display_table_cell text-center">
+                                <!-- main nav start -->
+                                <nav class="mainmenu_wrapper" style="padding-right:20px">
+                                    <ul class="mainmenu nav sf-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                                        <li class="active">
+                                            @Html.ActionLink("Home", "Index", "Home")
+                                            
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("History", "About", "History")
+                                            <ul style="display: none; margin-top: 5px;">
+                                                <!-- features -->
+                                                <!-- eof features -->
+
+                                                @Html.ActionLink("About", "About", "History", new { area = "" }, new { @class = "sf-with-ul" })
+                                              
+                                                <li>
+
+                                                    @Html.ActionLink("Team", "Team", "History", new { area = "" }, new { @class = "sf-with-ul" })
+                                                    @*<a href="team.html" class="sf-with-ul">Team</a>*@
+                                                    <ul style="display: none; margin-top: 5px;">
+                                                        <li>
+                                                            @Html.ActionLink("Team", "Team", "History", new { area = "" }, new { @class = "sf-with-ul" })
+                                                            @Html.ActionLink("Leaders", "Leaders", "History")
+                                                            @*<a href="team.html">Leaders</a>*@
+                                                        </li>
+                                                        <li>
+                                                            @Html.ActionLink("Team Member", "Team", "History")
+                                                            @*<a href="team.html">Team Member</a>*@
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    @Html.ActionLink("Donate", "Donate", "History")
+                                                    @*<a href="donate.html">Donate</a>*@
+                                                </li>
+                                                <li>
+                                                    @Html.ActionLink("Timetable", "Timetable", "History")
+                                                    @*<a href="timetable.html">Timetable</a>*@
+                                                </li>
+                                                <!-- events -->
+
+                                            </ul>
+                                        </li>
+                                        <!-- eof pages -->
+                                        <li>
+                                            @*<a href="services.html" class="sf-with-ul">Services</a>*@
+                                            @Html.ActionLink("Services", "Services", "Service")
+                                            <ul style="display: none; margin-top: 5px;">
+                                                <li>
+                                                    @Html.ActionLink("TempleService", "TempleService", "Service")
+                                                    @*<a href="services.html">Temple Services</a>*@
+                                                </li>
+                                                <li>
+                                                    @Html.ActionLink("CharityService", "CharityService", "Service")
+                                                    @*<a href="services.html">Charity Service</a>*@
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- gallery -->
+                                        <li>
+                                            @* <a href="gallery-carousel.html" class="sf-with-ul">Gallery</a>*@
+                                            @Html.ActionLink("Gallery", "Gallery", "Gallery")
+                                            <ul style="display: none; margin-top: 5px;">
+
+                                                <!-- eof Gallery extended -->
+                                                <!-- Gallery carousel -->
+                                                <li>
+                                                    @*<a href="gallery-carousel.html" class="sf-with-ul">Temple Gallery </a>*@
+                                                    @Html.ActionLink("Temple Gallery", "Gallery", "Gallery")
+                                                    <ul style="display: none; margin-top: 5px;">
+                                                        <li>
+                                                            @*<a href="gallery-carousel.html">Old Gallery</a>*@
+                                                            @Html.ActionLink("Old Gallery", "Gallery", "Gallery")
+                                                        </li>
+                                                        <li>
+                                                            @*<a href="gallery-carousel.html">Swamy Kalyanam Gallery</a>*@
+                                                            @Html.ActionLink("Swamy Kalyanam Gallery", "Gallery", "Gallery")
+                                                        </li>
+                                                        <li>
+                                                            @*<a href="gallery-carousel.html">Charity Gallery</a>*@
+                                                            @Html.ActionLink("Charity Gallery", "Gallery", "Gallery")
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <!-- eof Gallery carousel -->
+
+                                            </ul>
+                                        </li>
+                                        <!-- eof Gallery -->
+                                        <!-- contacts -->
+                                        <li>
+                                            @Html.ActionLink("Contact", "Contact", "Home")
+                                            @*<li> <a href="Home/contact" class="sf-with-ul">Contacts</a>*@
+                                        </li>
+
+                                    </ul>
+
+                                </nav>
+                                <!-- eof main nav -->
+                                <!-- header toggler --><span class="toggle_menu"><span></span></span>
+                            </div>
+                            <div class="header_right_buttons display_table_cell text-right hidden-xs" style="max-width:300px;">  @Html.ActionLink("Donate", "Donate", "History", new { area = "" }, new { @class = "theme_button color2 margin_0" }) </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"></ul>
+                </div>
+            </div>
+        </div>*@
+
+            <div>
+                @RenderBody()
+                <hr />
+                <!--Footer Section -->
+                <footer class="page_footer template_footer ds ms parallax overlay_color section_padding_top_10 section_padding_bottom_10 columns_padding_25">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12 col-md-push-4 text-center">
+                                <div class="widget widget_text widget_about">
+                                    <div class="logo logo_with_text bottommargin_2">
+                                        <img src="images/logo.png" alt=""> <span class="logo_text">
+                                            SRI VAIKUNTAPURAMU
+                                            <small class="highlight4">Virat Venkateswara Swamy Divya Kshetram - Sangareddy</small>
+                                        </span>
+                                    </div>
+
+                                    <p>The winds blow, that is Hinkara, A Cloud is formed, that is Prastava It rains, that is an Udgitha the lightning that strikes and thunder that rolls, that is Pratihara .The rains stop and clouds lifts, that is Nidhana.</p>
+                                    <!--<p> —Chandogya Upanishad 2.3.1</p>-->
+                                    <p class="topmargin_5">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12 col-md-pull-4 text-center">
+                                <div class="widget widget_text">
+                                    <h3 class="widget-title">Our Contacts</h3>
+                                    <ul class="list-unstyled greylinks">
+                                        <li class="media"> <i class="fa fa-map-marker highlight rightpadding_5" aria-hidden="true"></i> <a href="https://www.google.co.in/maps/place/Sri+Vaikuntapuram+Venkateswara+Temple/17.6334343,78.0984579,15z/data=!4m5!3m4!1s0x0:0xb29c4fdbcc57527b!8m2!3d17.6334343!4d78.0984579">Sri Vaikuntapuramu, Sangareddy </a></li>
+                                        <li class="media"> <i class="fa fa-phone highlight rightpadding_5" aria-hidden="true"></i> +91-732 992 6266 (Swamyji) </li>
+                                        <li class="media"> <i class="fa fa-pencil highlight rightpadding_5" aria-hidden="true"></i> <a href="mailto:svtemplesrd@gmail.com">svtemplesrd@gmail.com</a> </li>
+                                        <li class="media"> <i class="fa fa-clock-o highlight rightpadding_5" aria-hidden="true"></i> Sun-Fri: 06:00-20:00, Sat: 05:00-20:30 </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12 hidden-xs hidden-sm text-center">
+                                <div class="widget widget_recent_posts">
+                                    <h3 class="widget-title">Recent Events</h3>
+                                    <ul class="list-unstyled greylinks">
+                                        <li>
+                                            <p> <a href="@Url.Action("Index","Home")">Special rituals on yearly Brahmosthvalu on special days.</a> </p>
+                                            <div class="entry-meta inline-content greylinks">
+                                                <span>
+                                                    <i class="fa fa-calendar highlight3 rightpadding_5" aria-hidden="true"></i>
+                                                    <a href="@Url.Action("Index","Home")">
+                                                        <time datetime="2017-10-03T08:50:40+00:00">
+                                                            17 jan, 2018
+                                                        </time>
+                                                    </a>
+                                                </span> <span>
+                                                    <i class="fa fa-user highlight3 rightpadding_5" aria-hidden="true"></i>
+                                                    <a href="@Url.Action("Index","Home")">Admin</a>
+                                                </span> <span class="categories-links">
+                                                    <i class="fa fa-tags highlight3 rightpadding_5" aria-hidden="true"></i>
+                                                    <a href="@Url.Action("Index","Home")">Events</a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p> <a href="@Url.Action("Index","Home")">Vaikunta swamy vari Uthara dhwara dharshanam on vaikunta ekadhsi thidhi.</a> </p>
+                                            <div class="entry-meta inline-content greylinks">
+                                                <span>
+                                                    <i class="fa fa-calendar highlight3 rightpadding_5" aria-hidden="true"></i>
+                                                    <a href="@Url.Action("Index","Home")">
+                                                        <time datetime="2017-10-03T08:50:40+00:00">
+                                                            17 jan, 2018
+                                                        </time>
+                                                    </a>
+                                                </span> <span>
+                                                    <i class="fa fa-user highlight3 rightpadding_5" aria-hidden="true"></i>
+                                                    <a href="@Url.Action("Index","Home")">Admin</a>
+                                                </span> <span class="categories-links">
+                                                    <i class="fa fa-tags highlight3 rightpadding_5" aria-hidden="true"></i>
+                                                    <a href="@Url.Action("Index","Home")">Serivces</a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+                <section class="ds ms parallax page_copyright overlay_color section_padding_top_5 section_padding_bottom_5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <p>SV Temple - Sangareddy &copy;  Copyright 2018. All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <script src="~/Content/js/compressed.js"></script>
+            <script src="~/Content/js/selectize.min.js"></script>
+            <script src="~/Content/js/main.js"></script>
+</body>
+<!-- eof #canvas -->
+
+</html>
