@@ -4,5 +4,370 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>TimeTable</h2>
+
+<section class="page_breadcrumbs ds background_cover section_padding_top_65 section_padding_bottom_65">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2>Temple History</h2>
+                <ol class="breadcrumb greylinks">
+                    <li>
+                        <a href="./">
+                            Home
+                        </a>
+                    </li>
+                    <li> <a href="#">History</a> </li>
+                    <li class="active">About</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ls section_padding_top_100 section_padding_bottom_100">
+    <div class="col-sm-12 bottommargin_0 to_animate animated fadeInUp" data-animation="fadeInUp">
+        <h2 class="section_header color">Daily Seva </h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="text-center col-sm-12 ">
+                <ul id="timetable_filter" class="greylinks filters">
+                    <li> <a data-filter="all" href="#" class="selected">All</a> </li>
+                    <li> <a data-filter=".Suprabhata-Seva" href="#">Suprabhata-Seva</a> </li>
+                    <li> <a data-filter=".Aaradhana" href="#">Aaradhana</a> </li>
+                    <li> <a data-filter=".Mangalasashanam" href="#">Mangalasashanam</a> </li>
+                    <li> <a data-filter=".Parayanam" href="#">Parayanam</a> </li>
+                    <li> <a data-filter=".Gosti" href="#">Gosti</a> </li>
+                    <li> <a data-filter=".Eekantha Seva" href="#">Eekantha Seva</a> </li>
+
+                </ul>
+                <div class="clearfix"></div>
+                <div class="table-responsive">
+                    <table class="table_template darklinks" id="timetable">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Sunday</th>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>6:00</th>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Suprabhata-Seva">
+                                        Suprabhata-Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Suprabhata-Seva">
+                                        Suprabhata-Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Suprabhata-Seva">
+                                        Suprabhata-Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Suprabhata-Seva">
+                                        Suprabhata-Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Suprabhata-Seva">
+                                        Suprabhata-Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Suprabhata-Seva">
+                                        Suprabhata-Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Suprabhata-Seva">
+                                        Suprabhata-Seva
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>7:30</th>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>8:00</th>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Mangalasashanam">
+                                        Mangalasashanam, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Mangalasashanam">
+                                        Mangalasashanam, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Mangalasashanam">
+                                        Mangalasashanam, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Mangalasashanam">
+                                        Mangalasashanam, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Mangalasashanam">
+                                        Mangalasashanam, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Mangalasashanam">
+                                        Mangalasashanam, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Mangalasashanam">
+                                        Mangalasashanam, Teertha Gosti
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>8:30</th>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Archana">
+                                        Masa Archana, Nitya Archana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Archana">
+                                        Masa Archana, Nitya Archana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Archana">
+                                        Masa Archana, Nitya Archana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Archana">
+                                        Masa Archana, Nitya Archana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Archana">
+                                        Masa Archana, Nitya Archana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Archana">
+                                        Masa Archana, Nitya Archana
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Archana">
+                                        Masa Archana, Nitya Archana
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>12:00</th>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana, Teertha Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Aaradhana">
+                                        Aaradhana, Teertha Gosti
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>18:00</th>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Parayanam">
+                                        Veda Parayanam, Vishnu Sahasranamam
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Parayanam">
+                                        Veda Parayanam, Vishnu Sahasranamam
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Parayanam">
+                                        Veda Parayanam, Vishnu Sahasranamam
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Parayanam">
+                                        Veda Parayanam, Vishnu Sahasranamam
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Parayanam">
+                                        Veda Parayanam, Vishnu Sahasranamam
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Parayanam">
+                                        Veda Parayanam, Vishnu Sahasranamam
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Parayanam">
+                                        Veda Parayanam, Vishnu Sahasranamam
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>20:00</th>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Prasada">
+                                        Aaradhana, Teertha Prasada Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Prasada">
+                                        Aaradhana, Teertha Prasada Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Prasada">
+                                        Aaradhana, Teertha Prasada Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Prasada">
+                                        Aaradhana, Teertha Prasada Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Prasada">
+                                        Aaradhana, Teertha Prasada Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Prasada">
+                                        Aaradhana, Teertha Prasada Gosti
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="Prasada">
+                                        Aaradhana, Teertha Prasada Gosti
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>20:20</th>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="EekanthaSeva">
+                                        Eekantha Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="EekanthaSeva">
+                                        Eekantha Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="EekanthaSeva">
+                                        Eekantha Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="EekanthaSeva">
+                                        Eekantha Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="EekanthaSeva">
+                                        Eekantha Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="EekanthaSeva">
+                                        Eekantha Seva
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Events","Service")" class="EekanthaSeva">
+                                        Eekantha Seva
+                                    </a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 

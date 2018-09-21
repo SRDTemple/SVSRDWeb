@@ -25,7 +25,11 @@ namespace Template.Controllers
         {
             return View();
         }
-
+        // GET: Service/Event
+        public ActionResult Events()
+        {
+            return View();
+        }
         // POST: Service/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)

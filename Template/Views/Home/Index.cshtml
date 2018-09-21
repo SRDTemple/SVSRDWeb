@@ -8,7 +8,7 @@
     <div class="flexslider" data-dots="true" data-nav="true">
         <ul class="slides">
             <li>
-                <div class="slide-image-wrap"> <img src="images/slide01.jpg" alt="" /> </div>
+                <div class="slide-image-wrap"> <img src="~/images/slide01.jpg" alt="" /> </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 text-center">
@@ -22,7 +22,7 @@
                                         <p class="thin"><em>Details on Ganesha nimazzana celebrations coming on Sptember 23, 2018</em></p>
                                     </div>
                                     <div class="intro-layer" data-animation="fadeInUp">
-                                        <div class="slide_buttons"> <a href="contact.html" class="theme_button color1 min_width_button">Be Proud!</a> </div>
+                                        <div class="slide_buttons"> <a href="@Url.Action("Contact","Home")" class="theme_button color1 min_width_button">Be Proud!</a> </div>
                                     </div>
                                 </div>
                                 <!-- eof .slide_description -->
@@ -36,7 +36,7 @@
                 <!-- eof .container -->
             </li>
             <li>
-                <div class="slide-image-wrap"> <img src="images/slide02.jpg" alt="" /> </div>
+                <div class="slide-image-wrap"> <img src="~/images/slide02.jpg" alt="" /> </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 text-center">
@@ -50,7 +50,7 @@
                                         <p class="thin"><em>Details on the huge Calvin Sandoval celebration coming to Hillcrest on February 27, 2018</em></p>
                                     </div>
                                     <div class="intro-layer" data-animation="fadeInUp">
-                                        <div class="slide_buttons"> <a href="contact.html" class="theme_button color1 min_width_button">Be Proud!</a> </div>
+                                        <div class="slide_buttons"> <a href="@Url.Action("Contact","Home")" class="theme_button color1 min_width_button">Be Proud!</a> </div>
                                     </div>
                                 </div>
                                 <!-- eof .slide_description -->
@@ -64,7 +64,7 @@
                 <!-- eof .container -->
             </li>
             <li>
-                <div class="slide-image-wrap"> <img src="images/slide03.jpg" alt="" /> </div>
+                <div class="slide-image-wrap"> <img src="~/images/slide03.jpg" alt="" /> </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 text-center">
@@ -78,7 +78,7 @@
                                         <p class="thin"><em>Details on the huge Calvin Sandoval celebration coming to Hillcrest on February 27, 2018</em></p>
                                     </div>
                                     <div class="intro-layer" data-animation="fadeInUp">
-                                        <div class="slide_buttons"> <a href="contact.html" class="theme_button color1 min_width_button">Be Proud!</a> </div>
+                                        <div class="slide_buttons"> <a href="@Url.Action("Contact","Home")" class="theme_button color1 min_width_button">Be Proud!</a> </div>
                                     </div>
                                 </div>
                                 <!-- eof .slide_description -->
@@ -168,7 +168,7 @@
                 <p class="section-excerpt grey">Vaikuntapuramu Sri Venkateshwara swamy- Sangareddy temple holy place prmises video here.</p>
                 <div class="embed-responsive embed-responsive-3by2">
                     <a href="https://www.youtube.com/embed/iXbwk-QMmtw" class="embed-placeholder">
-                        <img src="images/gallery/01.jpg" alt="">
+                        <img src="~/images/gallery/01.jpg" alt="">
                     </a>
                 </div>
             </div>
@@ -178,7 +178,7 @@
                 <p>
                     In south india, there is a ritual which is, where ever, Lord Venkateshwara or Lord Sri Krishna or Sri Rama are installed To describe that Idol we need to understand the song which was written by Annamacharya. That song is “Andariki abhayyammulu ichu cheyi, kanduvagu manchi bangaru cheyi”. As that song describes the lord, even that Idol was evolved with at most beauty with a smiling face, Golden Hand (Abhaya Hastam),
                     Golden Chest Armour, Golden Thirunamam. All devotees who arrived that location were blessed by seeing that beautiful Idol.
-                    They were blessed by the luck which couldn’t obtained by other life’s. Then they Installed that Idol in that newly constructed temple. From then the greatness of this temple was spread across the state and county. <a href="service-single.html#tester" class="more-link">read more</a>
+                    They were blessed by the luck which couldn’t obtained by other life’s. Then they Installed that Idol in that newly constructed temple. From then the greatness of this temple was spread across the state and county. <a href="@Url.Action("About","History")" class="more-link">read more</a>
                 </p>
             </div>
         </div>
@@ -193,58 +193,75 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-12">
                                 <div class="vertical-item content-absolute text-center ds">
-                                    <div class="item-media"> <img src="./Diversify_files/02(1).jpg" alt=""> </div>
+                                    <div class="item-media"> <img src="~/images/Gallery/03.jpg" alt=""> </div>
                                     <div class="item-content darken_gradient">
-                                        <h3 class="entry-title"> <a href="http://webdesign-finder.com/html/diversify/gallery-single.html">Special at Crest Cafe</a> </h3>
+                                        <h3 class="entry-title"> <a href="@Url.Action("About","History")">Old Temple Architecture </a> </h3>
                                     </div>
                                 </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-12">
                                 <div class="vertical-item content-absolute text-center ds">
-                                    <div class="item-media"> <img src="./Diversify_files/03(1).jpg" alt=""> </div>
+                                    <div class="item-media"> <img src="~/images/Gallery/012.jpg" alt=""> </div>
                                     <div class="item-content darken_gradient">
-                                        <h3 class="entry-title"> <a href="http://webdesign-finder.com/html/diversify/gallery-single.html">Karaoke at Flicks</a> </h3>
+                                        <h3 class="entry-title"> <a href="@Url.Action("About","History")">Lord Vinayaka</a> </h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-6">
-                        <div class="vertical-item closest-event content-absolute text-center ds">
 
-                            <!-- <div id="comingsoon-countdown" data-count-to="March 6, 2018 15:00:00 GMT-05:00" data-format="DHM"></div> -->
-                            <div id="comingsoon-countdown" data-format="DHMS" class="is-countdown"><span class="countdown-row countdown-show4"><span class="countdown-section"><span class="countdown-amount">29</span><span class="countdown-period">Days</span></span><span class="countdown-section"><span class="countdown-amount">22</span><span class="countdown-period">Hours</span></span><span class="countdown-section"><span class="countdown-amount">53</span><span class="countdown-period">Mins</span></span><span class="countdown-section"><span class="countdown-amount">59</span><span class="countdown-period">Sec</span></span></span></div>
-                            <h3 class="entry-title"> <a href="http://webdesign-finder.com/html/diversify/gallery-single.html">Tuesday All-Day Happy Hour</a> </h3>
-                            <div class="entry-meta inline-content">
-                                <span>
-                                    <i class="fa fa-map-marker highlight4 rightpadding_5" aria-hidden="true"></i>
-                                    229 Verna Viaduct, new york
-                                </span> <span>
-                                    <i class="fa fa-clock-o highlight4 rightpadding_5" aria-hidden="true"></i>
-                                    2:00 pm to 2:00 am
-                                </span>
+                    <div class="col-xs-12 col-md-3">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-3">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-12">
-
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-12">
-                            <div class="vertical-item content-absolute text-center ds">
-                                <div class="item-media"> <img src="./Diversify_files/06(1).jpg" alt=""> </div>
-                                <div class="item-content darken_gradient">
-                                    <h3 class="entry-title"> <a href="http://webdesign-finder.com/html/diversify/gallery-single.html">Turnback Tuesdays at Lips</a> </h3>
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+                                <div class="vertical-item content-absolute text-center ds">
+                                    <div class="item-media"> <img src="~/images/Gallery/080.jpg" alt=""> </div>
+                                    <div class="item-content darken_gradient">
+                                        <h3 class="entry-title"> <a href="@Url.Action("About","History")">Lord Hanuman</a> </h3>
+                                    </div>
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+                                <div class="vertical-item content-absolute text-center ds">
+                                    <div class="item-media"> <img src="~/images/Gallery/011.jpg" alt=""> </div>
+                                    <div class="item-content darken_gradient">
+                                        <h3 class="entry-title"> <a href="@Url.Action("About","History")">Harathi</a> </h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-12">
+                        <div class="vertical-item content-absolute text-center ds">
+                            <div class="item-media"> <img src="~/images/Gallery/021.jpg" alt=""> </div>
+                            <div class="item-content darken_gradient">
+                                <h3 class="entry-title"> <a href="@Url.Action("About","History")">New Temple Architecture</a> </h3>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
-    </div>
     </div>
 </section>
 

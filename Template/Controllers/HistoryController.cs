@@ -30,6 +30,16 @@ namespace Template.Controllers
         {
             return View();
         }
+        // GET: History/Leaders
+        public ActionResult Leaders()
+        {
+            return View();
+        }
+        // GET: History/TeamMember
+        public ActionResult TeamMember()
+        {
+            return View();
+        }
 
         // POST: History/Create
         [HttpPost]

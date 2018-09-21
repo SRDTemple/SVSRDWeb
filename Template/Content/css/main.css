@@ -10365,7 +10365,10 @@ body.active-side-header.slide-right .page_header_side {
 .cs h2.section_header {
 	border-left-color: #fff;
 }
-
+    .cs h4.section_header1 {
+        border-left-color: #03a8cb;
+        padding-left:10px;
+    }
 .cs a {
 	color: #ffffff;
 }
