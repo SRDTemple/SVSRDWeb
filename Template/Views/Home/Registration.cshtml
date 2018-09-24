@@ -17,43 +17,67 @@
     </div>
 </section>
 <section class="ls columns_padding_25 section_padding_top_100 section_padding_bottom_100">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 to_animate" data-animation="scaleAppear">
-                <h3>Registration Form</h3>
-                @using (Html.BeginForm("Registration", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "Registration-form row columns_padding_10" }))
-                {
-                    <div class="col-sm-6 input-group">
-                        <span class="form-group bottommargin_0 input-group-addon">
-                            <i class="fa fa-user"><span class="required">&nbsp;*</span></i>
-                        </span>
-                        <input type="text" class="form-control" placeholder="Full Name">
-                    </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 to_animate" data-animation="scaleAppear">
+					<h3>Registration Form</h3>
+					@*@using (Html.BeginForm("Registration", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "Registration-form row columns_padding_10" }))
+						{*@
+					<div class="col-sm-6 input-group">
+						<span class="form-group bottommargin_0 input-group-addon">
+							<i class="fa fa-user"><span class="required">&nbsp;*</span></i>
+						</span>
+						<input type="text" id="fullname" class="form-control" placeholder="Full Name">
+					</div>
 
-                    <div class="col-sm-6 input-group">
-                        <span class="form-group bottommargin_0 input-group-addon">
-                            <i class="fa fa-envelope"><span class="required">&nbsp;*</span></i>
-                        </span><input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="Email Address*"> </div>
-                    <div class="col-sm-6 input-group">
-                        <span class="form-group bottommargin_0 input-group-addon">
-                            <i class="fa fa-mobile-phone"><span class="required">&nbsp;*</span></i>
-                        </span> <input type="text" size="30" value="" name="phone" id="phone" class="form-control" placeholder="Phone Number">
-                    </div>
-                    
+					<div class="col-sm-6 input-group">
+						<span class="form-group bottommargin_0 input-group-addon">
+							<i class="fa fa-envelope"><span class="required">&nbsp;*</span></i>
+						</span><input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="Email Address*">
+					</div>
+					<div class="col-sm-6 input-group">
+						<span class="form-group bottommargin_0 input-group-addon">
+							<i class="fa fa-mobile-phone"><span class="required">&nbsp;*</span></i>
+						</span> <input type="text" size="30" value="" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+					</div>
 
-                    <div class="col-sm-12">
 
-                        <div class="contact-form-submit topmargin_20"> <button type="submit" id="register_form_submit" name="register_submit" class="theme_button color2 min_width_button margin_0">Register</button> </div>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
-</section>
+					<div class="col-sm-12">
 
-@*<div class="input-container">
-        <i class="fa fa-key icon"></i>
-        <input class="input-field" type="password" placeholder="Password" name="psw">
-    </div>*@
+						<div class="contact-form-submit topmargin_20"> <button type="submit" id="register_form_submit" name="register_submit" class="theme_button color2 min_width_button margin_0">Register</button> </div>
+					</div>
+					@*}*@
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		$(document).ready(function () {
+
+
+			$("#register_form_submit").click(function () {
+				var fullname = $("#fullname").val();
+				var email = $("#email").val();
+				var phone = $("#phone").val();
+				if (fullname != '' && email != '' && phone != '') {
+					$.ajax({
+						type: "POST",
+						url: '@Url.Action("Registration", "Home")',
+						contentType: "application/json; charset=utf-8",
+						data: JSON.stringify({ fullname: fullname, email: email, phone: phone }),
+						dataType: "json",
+						success: function (Result) {
+							alert(Result.Result);
+							window.location = '@Url.Action("Registration", "Home")';
+						},
+						error: function (Result) {
+							alert(Result.Result);
+							window.location = '@Url.Action("Registration", "Home")';
+						}
+					});
+				}
+			});
+		});
+	</script>
 
 
