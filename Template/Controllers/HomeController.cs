@@ -14,7 +14,7 @@ namespace Template.Controllers
         public ActionResult Index()
         {
             return View();
-        }                
+        }
 
         // GET: Home/Registration
         public ActionResult Registration()
@@ -28,7 +28,7 @@ namespace Template.Controllers
             return View();
         }
 
-        
+
 
         // POST: Home/Create
         [HttpPost]
@@ -89,7 +89,7 @@ namespace Template.Controllers
                 return View();
             }
         }
-       [HttpPost]
+        [HttpPost]
         public ActionResult Contact(string name, string email, string phone, string subject, string message)
         {
             try
@@ -106,24 +106,28 @@ namespace Template.Controllers
                 sb.Append("<br/>Phone No: " + phone);
                 sb.Append("<br/>Message: " + message);
 
-               string Body = "Hi, <br/><br/> A new enquiry by user. Detail is as follows:<br/><br/> " + sb.ToString() + "<br/><br/>Thanks";
+                string Body = "Hi, <br/><br/> A new enquiry by user. Detail is as follows:<br/><br/> " + sb.ToString() + "<br/><br/>Thanks";
                 mail.Body = Body;
                 mail.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
                 //SMTP Server Address of gmail
+                smtp.EnableSsl = true;
                 smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
                 smtp.Credentials = new System.Net.NetworkCredential(frommail, password);
                 // Smtp Email ID and Password For authentication
-                //smtp.EnableSsl = true;
+
                 smtp.Send(mail);
                 return new JsonResult() { Data = new { Result = "Thank you for contacting us." } };
+                //return Json(new { view = Index() });
             }
             catch (Exception ex)
             {
-                return new JsonResult() { Data = new { Result = "Error ............" } };
+                return new JsonResult() { Data = new { Result = "Error ....." + ex.Message.ToString() } };
+                //return Json(new { view = Index() });
             }
-            return View();
+           
+            
         }
         [HttpPost]
         public JsonResult Registration(string fullname, string email, string phone)
@@ -133,7 +137,7 @@ namespace Template.Controllers
                 MailMessage mail = new MailMessage();
                 string frommail = "svtemplesrd@gmail.com"; // ConfigurationManager.AppSettings["FromMailAddress"];
                 string password = "Perumal7"; // ConfigurationManager.AppSettings["password"];
-                mail.To.Add("doni.santosh@gmail.com"); // ConfigurationManager.AppSettings["ToMailAddress"];
+                mail.To.Add("svtemplesrd@gmail.com"); // ConfigurationManager.AppSettings["ToMailAddress"];
                 mail.From = new MailAddress(frommail);
                 mail.Subject = "New user registration";
                 StringBuilder sb = new StringBuilder();
@@ -145,18 +149,22 @@ namespace Template.Controllers
                 mail.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
                 //SMTP Server Address of gmail
+                smtp.EnableSsl = true;
                 smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
-                smtp.Credentials = new System.Net.NetworkCredential(frommail, password);
+
                 // Smtp Email ID and Password For authentication
-                //smtp.EnableSsl = true;
+                smtp.Credentials = new System.Net.NetworkCredential(frommail, password);
+
+
                 smtp.Send(mail);
                 return new JsonResult() { Data = new { Result = "Thank you for register." } };
             }
             catch (Exception ex)
             {
-                return new JsonResult() { Data = new { Result = "Error ............" } };
+                return new JsonResult() { Data = new { Result = "Error .." + ex.Message.ToString() } };
             }
+            
 
         }
     }
