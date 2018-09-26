@@ -13,6 +13,11 @@ namespace Template.Controllers
         {
             return View();
         }
+        // GET: History/Index 
+        public ActionResult Index()
+        {
+            return View();
+        }
         // GET: History/Team
         public ActionResult Team()
         {

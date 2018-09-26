@@ -13,7 +13,11 @@ namespace Template.Controllers
         {
             return View();
         }
-
+        // GET: Service/Index
+        public ActionResult Index()
+        {
+            return View();
+        }
         // GET: Service/TempleService
         public ActionResult TempleService()
         {

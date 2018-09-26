@@ -189,8 +189,8 @@
                     </div>
                     <div class="header_mainmenu display_table_cell text-center">
                         <!-- main nav start -->
-                        <nav class="mainmenu_wrapper" style="padding-right:20px">
-                            <ul class="mainmenu nav sf-menu sf-js-enabled sf-arrows" style="touch-action:pan-y;">
+                        <nav class="mainmenu_wrapper">
+                            <ul class="mainmenu nav sf-menu">
                                 <li class="active">
                                     @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "sf-with-ul" })
                                 </li>
@@ -235,8 +235,8 @@
                                 <!-- eof pages -->
                                 <li>
                                     
-                                    @Html.ActionLink("Services", "Services", "Service", new { area = "" }, new { @class = "sf-with-ul" })
-                                    <ul style="display: none; margin-top: 5px;">
+                                    @Html.ActionLink("Services", "Index", "Service", new { area = "" }, new { @class = "sf-with-ul" })
+                                    @*<ul style="display: none; margin-top: 5px;">
                                         <li>
                                             @Html.ActionLink("TempleService", "TempleService", "Service")
                  
@@ -245,37 +245,37 @@
                                             @Html.ActionLink("CharityService", "CharityService", "Service")
                  
                                         </li>
-                                    </ul>
+                                    </ul>*@
                                 </li>
                                 <!-- gallery -->
                                 <li>
                                     @* <a href="gallery-carousel.html" class="sf-with-ul">Gallery</a>*@
                                     @Html.ActionLink("Gallery", "Index", "Gallery", new { area = "" }, new { @class = "sf-with-ul" })
-                                    <ul style="display: none; margin-top: 5px;">
+                                    @*<ul style="display: none; margin-top: 5px;">
 
-                                        <!-- eof Gallery extended -->
-                                        <!-- Gallery carousel -->
-                                        <li>
-                                            @*<a href="gallery-carousel.html" class="sf-with-ul">Temple Gallery </a>*@
-                                            @Html.ActionLink("Temple Gallery", "Gallery", "Gallery", new { area = "" }, new { @class = "sf-with-ul" })
-                                            <ul style="display: none; margin-top: 5px;">
-                                                <li>
-                                                    @*<a href="gallery-carousel.html">Old Gallery</a>*@
-                                                    @Html.ActionLink("Old Gallery", "Gallery", "Gallery")
-                                                </li>
-                                                <li>
-                              
-                                                    @Html.ActionLink("Swamy Kalyanam Gallery", "Gallery", "Gallery")
-                                                </li>
-                                                <li>
-                              
-                                                    @Html.ActionLink("Charity Gallery", "Gallery", "Gallery")
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!-- eof Gallery carousel -->
+            <!-- eof Gallery extended -->
+            <!-- Gallery carousel -->
+            <li>
+                <a href="gallery-carousel.html" class="sf-with-ul">Temple Gallery </a>
+                @Html.ActionLink("Temple Gallery", "Gallery", "Gallery", new { area = "" }, new { @class = "sf-with-ul" })
+                <ul style="display: none; margin-top: 5px;">
+                    <li>
+                        <a href="gallery-carousel.html">Old Gallery</a>
+                        @Html.ActionLink("Old Gallery", "Gallery", "Gallery")
+                    </li>
+                    <li>
 
-                                    </ul>
+                        @Html.ActionLink("Swamy Kalyanam Gallery", "Gallery", "Gallery")
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("Charity Gallery", "Gallery", "Gallery")
+                    </li>
+                </ul>
+            </li>
+            <!-- eof Gallery carousel -->
+
+        </ul>*@
                                 </li>
                                 <!-- eof Gallery -->
                                 <!-- contacts -->
