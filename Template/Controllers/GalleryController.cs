@@ -9,7 +9,7 @@ namespace Template.Controllers
     public class GalleryController : Controller
     {
         // GET: Gallery
-        public ActionResult Gallery()
+        public ActionResult Index()
         {
             return View();
         }

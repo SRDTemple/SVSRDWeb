@@ -233,6 +233,7 @@
     <Content Include="Views\Service\Events.cshtml" />
     <Content Include="Views\History\TeamMember.cshtml" />
     <Content Include="Views\History\Leaders.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
