@@ -11,14 +11,13 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/Content/js")
     <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <script src="~/Content/js/jquery.min.js"></script>
-    <script src="~/Content/js/skel.min.js"></script>
-    <script src="~/Content/js/skel-layers.min.js"></script>
-    <script src="~/Content/js/init.js"></script>
-
+    
     <!--Paypal-->
+    <div id="paypal-button-container"></div>
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <script>
         paypal.Button.render({
@@ -64,12 +63,6 @@
         <link href="css/style-xlarge.css" rel="stylesheet" />
     </noscript>
 
-    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/css/animations.css" rel="stylesheet" />
-    <link href="~/Content/css/fonts.css" rel="stylesheet" />
-    <link href="~/Content/css/main.css" rel="stylesheet" />
-    <link href="~/Content/css/shop.css" rel="stylesheet" />
-    <link href="~/Content/css/main.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
     <!--[if lt IE 9]>
@@ -77,8 +70,6 @@
          <script src="js/vendor/respond.min.js"></script>
          <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <![endif]-->
-
-    <script src="~/Content/js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
     <!--[if lt IE 9]>
@@ -212,21 +203,21 @@
                                                 </li>
                                                 <li>
                                                     @Html.ActionLink("Leaders", "Leaders", "History")
-                                                    
+
                                                 </li>
                                                 <li>
                                                     @Html.ActionLink("Team Member", "Team", "History")
-                                                    
+
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
                                             @Html.ActionLink("Donate", "Donate", "History")
-                                            
+
                                         </li>
                                         <li>
                                             @Html.ActionLink("Timetable", "Timetable", "History")
-                                            
+
                                         </li>
                                         <!-- events -->
 
@@ -234,18 +225,18 @@
                                 </li>
                                 <!-- eof pages -->
                                 <li>
-                                    
+
                                     @Html.ActionLink("Services", "Index", "Service", new { area = "" }, new { @class = "sf-with-ul" })
                                     @*<ul style="display: none; margin-top: 5px;">
-                                        <li>
-                                            @Html.ActionLink("TempleService", "TempleService", "Service")
-                 
-                                        </li>
-                                        <li>
-                                            @Html.ActionLink("CharityService", "CharityService", "Service")
-                 
-                                        </li>
-                                    </ul>*@
+                                            <li>
+                                                @Html.ActionLink("TempleService", "TempleService", "Service")
+
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("CharityService", "CharityService", "Service")
+
+                                            </li>
+                                        </ul>*@
                                 </li>
                                 <!-- gallery -->
                                 <li>
@@ -253,29 +244,29 @@
                                     @Html.ActionLink("Gallery", "Index", "Gallery", new { area = "" }, new { @class = "sf-with-ul" })
                                     @*<ul style="display: none; margin-top: 5px;">
 
-            <!-- eof Gallery extended -->
-            <!-- Gallery carousel -->
-            <li>
-                <a href="gallery-carousel.html" class="sf-with-ul">Temple Gallery </a>
-                @Html.ActionLink("Temple Gallery", "Gallery", "Gallery", new { area = "" }, new { @class = "sf-with-ul" })
-                <ul style="display: none; margin-top: 5px;">
-                    <li>
-                        <a href="gallery-carousel.html">Old Gallery</a>
-                        @Html.ActionLink("Old Gallery", "Gallery", "Gallery")
-                    </li>
-                    <li>
+                                            <!-- eof Gallery extended -->
+                                            <!-- Gallery carousel -->
+                                            <li>
+                                                <a href="gallery-carousel.html" class="sf-with-ul">Temple Gallery </a>
+                                                @Html.ActionLink("Temple Gallery", "Gallery", "Gallery", new { area = "" }, new { @class = "sf-with-ul" })
+                                                <ul style="display: none; margin-top: 5px;">
+                                                    <li>
+                                                        <a href="gallery-carousel.html">Old Gallery</a>
+                                                        @Html.ActionLink("Old Gallery", "Gallery", "Gallery")
+                                                    </li>
+                                                    <li>
 
-                        @Html.ActionLink("Swamy Kalyanam Gallery", "Gallery", "Gallery")
-                    </li>
-                    <li>
+                                                        @Html.ActionLink("Swamy Kalyanam Gallery", "Gallery", "Gallery")
+                                                    </li>
+                                                    <li>
 
-                        @Html.ActionLink("Charity Gallery", "Gallery", "Gallery")
-                    </li>
-                </ul>
-            </li>
-            <!-- eof Gallery carousel -->
+                                                        @Html.ActionLink("Charity Gallery", "Gallery", "Gallery")
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <!-- eof Gallery carousel -->
 
-        </ul>*@
+                                        </ul>*@
                                 </li>
                                 <!-- eof Gallery -->
                                 <!-- contacts -->
@@ -290,7 +281,9 @@
                         <!-- eof main nav -->
                         <!-- header toggler --><span class="toggle_menu"><span></span></span>
                     </div>
-                    <div class="header_right_buttons display_table_cell text-right hidden-xs" style="max-width:300px;">  @Html.ActionLink("Donate", "Donate", "History", new { area = "" }, new { @class = "theme_button color2 margin_0" }) </div>
+
+                    @*<div class="header_right_buttons display_table_cell text-right hidden-xs" style="max-width:300px;"> <a id="paypal-button"> @Html.ActionLink("Donate", "Donate", "History", new { area = "" }, new { @class = "theme_button color2 margin_0" })</a> </div>*@
+                    <div class="header_right_buttons display_table_cell text-right hidden-xs" style="max-width:300px;"> <a > @Html.ActionLink("Donate", "Donate", "History", new { area = "" }, new { @class = "theme_button color2 margin_0" })</a> </div>
                 </div>
             </div>
         </div>
@@ -407,9 +400,11 @@
     </div>
 
 
-    <script src="~/Content/js/compressed.js"></script>
+    @*<script src="~/Content/js/compressed.js"></script>
     <script src="~/Content/js/selectize.min.js"></script>
-    <script src="~/Content/js/main.js"></script>
+    <script src="~/Content/js/main.js"></script>*@
+    @Scripts.Render("~/bundles/scripts");
+    
 </body>
 <!-- eof #canvas -->
 

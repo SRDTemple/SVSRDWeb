@@ -165,7 +165,6 @@ namespace Template.Controllers
                 return new JsonResult() { Data = new { Result = "Error .." + ex.Message.ToString() } };
             }
             
-
         }
     }
 }
