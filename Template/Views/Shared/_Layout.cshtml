@@ -15,8 +15,25 @@
     @Scripts.Render("~/Content/js")
     <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    
     <!--Paypal-->
+
+    <link rel="icon" href="icon.png" type="image/gif" sizes="16x16">
+    <noscript>
+        <link href="css/skel.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/style-xlarge.css" rel="stylesheet" />
+    </noscript>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+         <script src="js/vendor/html5shiv.min.js"></script>
+         <script src="js/vendor/respond.min.js"></script>
+         <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
     <div id="paypal-button-container"></div>
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <script>
@@ -56,22 +73,6 @@
 
         }, '#paypal-button');
     </script>
-    <link rel="icon" href="icon.png" type="image/gif" sizes="16x16">
-    <noscript>
-        <link href="css/skel.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
-        <link href="css/style-xlarge.css" rel="stylesheet" />
-    </noscript>
-
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-
-    <!--[if lt IE 9]>
-         <script src="js/vendor/html5shiv.min.js"></script>
-         <script src="js/vendor/respond.min.js"></script>
-         <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <![endif]-->
-</head>
-<body>
     <!--[if lt IE 9]>
              <div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
          <![endif]-->
@@ -212,6 +213,26 @@
                                             </ul>
                                         </li>
                                         <li>
+                                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                <input type="hidden" name="cmd" value="_s-xclick">
+                                                <input type="hidden" name="hosted_button_id" value="7SNWGPD4WVM24">
+                                                <table>
+                                                    <tr><td><input type="hidden" name="on0" value="Jai Sreemannarayana Charitable Trust">Jai Sreemannarayana Charitable Trust</td></tr>
+                                                    <tr>
+                                                        <td>
+                                                            <select name="os0">
+                                                                <option value="Daily">Daily : $1.00 USD - daily</option>
+                                                                <option value="Weekly">Weekly : $10.00 USD - weekly</option>
+                                                                <option value="Monthly">Monthly : $100.00 USD - monthly</option>
+                                                                <option value="Yearly">Yearly : $100.00 USD - yearly</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <input type="hidden" name="currency_code" value="USD">
+                                                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                                                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                                            </form>
                                             @Html.ActionLink("Donate", "Donate", "History")
 
                                         </li>
@@ -283,7 +304,9 @@
                     </div>
 
                     @*<div class="header_right_buttons display_table_cell text-right hidden-xs" style="max-width:300px;"> <a id="paypal-button"> @Html.ActionLink("Donate", "Donate", "History", new { area = "" }, new { @class = "theme_button color2 margin_0" })</a> </div>*@
-                    <div class="header_right_buttons display_table_cell text-right hidden-xs" style="max-width:300px;"> <a > @Html.ActionLink("Donate", "Donate", "History", new { area = "" }, new { @class = "theme_button color2 margin_0" })</a> </div>
+                    <div >
+                        @*<input type="button" value="Checkout" id="btnCheckout" class='btn-action btn' />*@ <input type="button" value="Donate" id="btnPay" style="max-width:100px;"class="header_right_buttons display_table_cell text-right hidden-xs theme_button color2 margin_0" />@*<a> @Html.ActionLink("Donate", "Donate", "History", new { area = "" }, new { @class = "theme_button color2 margin_0" })</a>*@
+                    </div>
                 </div>
             </div>
         </div>
@@ -398,13 +421,8 @@
             </div>
         </section>
     </div>
+    @Scripts.Render("~/bundles/scripts")
 
-
-    @*<script src="~/Content/js/compressed.js"></script>
-    <script src="~/Content/js/selectize.min.js"></script>
-    <script src="~/Content/js/main.js"></script>*@
-    @Scripts.Render("~/bundles/scripts");
-    
 </body>
 <!-- eof #canvas -->
 

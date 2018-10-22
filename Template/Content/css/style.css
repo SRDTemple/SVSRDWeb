@@ -10,9 +10,10 @@
 
 /* Basic */
 
-	body {
-		background: #fff;
-	}
+body {
+    background: #fff;
+    overflow-x: hidden;
+}
 
 	body, input, select, textarea {
 		color: #313131;
