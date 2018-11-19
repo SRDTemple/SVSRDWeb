@@ -14,76 +14,62 @@ namespace Template.Controllers
             return View();
         }
 
-        // GET: Calendar/Details/5
-        public ActionResult Details(int id)
+        public JsonResult GetEvents()
         {
-            return View();
+            using (MyDatabaseEntities dc = new MyDatabaseEntities())
+            {
+                var events = dc.Events.ToList();
+                return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            }
         }
 
-        // GET: Calendar/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Calendar/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public JsonResult SaveEvent(Event e)
         {
-            try
+            var status = false;
+            using (MyDatabaseEntities dc = new MyDatabaseEntities())
             {
-                // TODO: Add insert logic here
+                if (e.EventID > 0)
+                {
+                    //Update the event
+                    var v = dc.Events.Where(a => a.EventID == e.EventID).FirstOrDefault();
+                    if (v != null)
+                    {
+                        v.Subject = e.Subject;
+                        v.Start = e.Start;
+                        v.End = e.End;
+                        v.Description = e.Description;
+                        v.IsFullDay = e.IsFullDay;
+                        v.ThemeColor = e.ThemeColor;
+                    }
+                }
+                else
+                {
+                    dc.Events.Add(e);
+                }
 
-                return RedirectToAction("Index");
+                dc.SaveChanges();
+                status = true;
+
             }
-            catch
-            {
-                return View();
-            }
+            return new JsonResult { Data = new { status = status } };
         }
 
-        // GET: Calendar/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Calendar/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public JsonResult DeleteEvent(int eventID)
         {
-            try
+            var status = false;
+            using (MyDatabaseEntities dc = new MyDatabaseEntities())
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                var v = dc.Events.Where(a => a.EventID == eventID).FirstOrDefault();
+                if (v != null)
+                {
+                    dc.Events.Remove(v);
+                    dc.SaveChanges();
+                    status = true;
+                }
             }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Calendar/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Calendar/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return new JsonResult { Data = new { status = status } };
         }
     }
 }
