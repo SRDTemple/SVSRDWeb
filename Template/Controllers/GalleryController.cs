@@ -14,6 +14,10 @@ namespace Template.Controllers
             return View();
         }
 
+        public ActionResult Feb2019Event()
+        {
+            return View();
+        }
         // GET: Gallery
         public ActionResult Details(int id)
         {

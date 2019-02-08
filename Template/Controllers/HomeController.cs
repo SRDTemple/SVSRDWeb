@@ -10,6 +10,11 @@ namespace Template.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Flash
+        public ActionResult Flash()
+        {
+            return View();
+        }
         // GET: Home
         public ActionResult Index()
         {
