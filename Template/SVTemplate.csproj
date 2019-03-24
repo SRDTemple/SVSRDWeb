@@ -1,5 +1,6 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -15,7 +16,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Template</RootNamespace>
     <AssemblyName>Template</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
     <WebGreaseLibPath>packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -63,17 +65,21 @@
       <HintPath>packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PayPalCoreSDK, Version=1.7.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
-      <HintPath>packages\PayPalCoreSDK.1.7.1\lib\net451\PayPalCoreSDK.dll</HintPath>
+      <HintPath>packages\PayPalCoreSDK.1.7.1\lib\net45\PayPalCoreSDK.dll</HintPath>
     </Reference>
+    <Reference Include="paytm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\PayTM_AstroBasic.2.0.0\lib\.net_4.5\paytm.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -95,18 +101,20 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\animations.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\font-awesome.min.css" />
@@ -155,6 +163,7 @@
     <Content Include="Content\Vendor\tilt\tilt.jquery.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="Content\Vendor\bootstrap\css\bootstrap-grid.min.css.map" />
@@ -168,19 +177,65 @@
     <Content Include="images\banner2.jpg" />
     <Content Include="images\banner3.jpg" />
     <Content Include="images\Depositphotos270x206.jpg" />
+    <Content Include="images\Events\2019\01.jpg" />
+    <Content Include="images\Events\2019\02.jpg" />
+    <Content Include="images\Events\2019\03.jpg" />
+    <Content Include="images\Events\2019\04.jpg" />
+    <Content Include="images\Events\2019\05.jpg" />
+    <Content Include="images\Events\2019\06.jpg" />
+    <Content Include="images\Events\2019\07.jpg" />
+    <Content Include="images\Events\2019\08.jpg" />
+    <Content Include="images\Events\2019\09.jpg" />
+    <Content Include="images\Events\2019\10.jpg" />
+    <Content Include="images\Events\2019\11.jpg" />
+    <Content Include="images\Events\2019\12.jpg" />
+    <Content Include="images\Events\2019\animations.css" />
+    <Content Include="images\Events\2019\bootstrap.min.css" />
+    <Content Include="images\Events\2019\fonts.css" />
+    <Content Include="images\Events\2019\logo.png" />
+    <Content Include="images\Events\2019\main.css" />
+    <Content Include="images\Events\2019\pattern0.png" />
+    <Content Include="images\Events\2019\pattern1.png" />
+    <Content Include="images\Events\2019\pattern10.png" />
+    <Content Include="images\Events\2019\pattern11.png" />
+    <Content Include="images\Events\2019\pattern2.png" />
+    <Content Include="images\Events\2019\pattern3.png" />
+    <Content Include="images\Events\2019\pattern4.png" />
+    <Content Include="images\Events\2019\pattern5.png" />
+    <Content Include="images\Events\2019\pattern6.png" />
+    <Content Include="images\Events\2019\pattern7.png" />
+    <Content Include="images\Events\2019\pattern8.png" />
+    <Content Include="images\Events\2019\pattern9.png" />
+    <Content Include="images\Events\2019\shop.css" />
     <Content Include="images\Events\6thAnnualCelbrations.jpeg" />
     <Content Include="images\Events\Brahmotsavalu-2019-Details.jpeg" />
-    <Content Include="images\Events\Feb2019\1.jpeg" />
+    <Content Include="images\Events\Feb2019\001.jpeg" />
     <Content Include="images\Events\Feb2019\10.jpeg" />
+    <Content Include="images\Events\Feb2019\100.jpeg" />
+    <Content Include="images\Events\Feb2019\101.jpeg" />
+    <Content Include="images\Events\Feb2019\102.jpeg" />
     <Content Include="images\Events\Feb2019\11.jpeg" />
-    <Content Include="images\Events\Feb2019\2.jpeg" />
-    <Content Include="images\Events\Feb2019\3.jpeg" />
-    <Content Include="images\Events\Feb2019\4.jpeg" />
-    <Content Include="images\Events\Feb2019\5.jpeg" />
-    <Content Include="images\Events\Feb2019\6.jpeg" />
-    <Content Include="images\Events\Feb2019\7.jpeg" />
-    <Content Include="images\Events\Feb2019\8.jpeg" />
-    <Content Include="images\Events\Feb2019\9.jpeg" />
+    <Content Include="images\Events\Feb2019\12.jpeg" />
+    <Content Include="images\Events\Feb2019\13.jpeg" />
+    <Content Include="images\Events\Feb2019\14.jpeg" />
+    <Content Include="images\Events\Feb2019\15.jpeg" />
+    <Content Include="images\Events\Feb2019\02.jpeg" />
+    <Content Include="images\Events\Feb2019\20.jpeg" />
+    <Content Include="images\Events\Feb2019\21.jpeg" />
+    <Content Include="images\Events\Feb2019\22.jpeg" />
+    <Content Include="images\Events\Feb2019\23.jpeg" />
+    <Content Include="images\Events\Feb2019\24.jpeg" />
+    <Content Include="images\Events\Feb2019\03.jpeg" />
+    <Content Include="images\Events\Feb2019\31.jpeg" />
+    <Content Include="images\Events\Feb2019\01.jpeg" />
+    <Content Include="images\Events\Feb2019\33.jpeg" />
+    <Content Include="images\Events\Feb2019\34.jpeg" />
+    <Content Include="images\Events\Feb2019\04.jpeg" />
+    <Content Include="images\Events\Feb2019\05.jpeg" />
+    <Content Include="images\Events\Feb2019\06.jpeg" />
+    <Content Include="images\Events\Feb2019\07.jpeg" />
+    <Content Include="images\Events\Feb2019\08.jpeg" />
+    <Content Include="images\Events\Feb2019\09.jpeg" />
     <Content Include="images\Gallery\0001.JPG" />
     <Content Include="images\Gallery\011.JPG" />
     <Content Include="images\Gallery\01.jpeg" />
@@ -232,6 +287,12 @@
     <Content Include="images\slide03.jpg" />
     <Content Include="images\slide03.png" />
     <Content Include="images\Virat_Banner.jpg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
@@ -257,9 +318,13 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\FontAwesome1" />
     <Content Include="fonts\FontsFree-Net-Proxima-Nova-Bold.otf" />
-    <None Include="packages.config" />
+    <Content Include="images\Events\2019\main.js.download" />
+    <Content Include="images\Events\2019\modernizr-2.6.2.min.js.download" />
+    <Content Include="images\Events\2019\selectize.min.js.download" />
+    <Content Include="images\Events\2019\switcher.js.download" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Views\History\Donate.cshtml" />
     <Content Include="Views\History\Team.cshtml" />
@@ -286,7 +351,10 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\Flash.cshtml" />
+    <Content Include="Views\Gallery\Feb2019Event1.cshtml" />
     <Content Include="Views\Gallery\Feb2019Event.cshtml" />
+    <Content Include="Views\Shared\_Layoutn.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -297,7 +365,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -328,7 +395,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
